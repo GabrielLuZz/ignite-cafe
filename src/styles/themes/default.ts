@@ -33,11 +33,11 @@ export const defaultTheme = {
       ButtonG: '700 0.875rem/1.6 "Roboto", sans-serif',
     },
     font2: {
-      TextXS: '800 1.125rem/1.3 "Baloo 2", cursive',
-      TextS: '800 1.25rem/1.3 "Baloo 2", cursive',
-      TextM: '700 1.5rem/1.3 "Baloo 2", cursive',
-      TextL: '700 2rem/1.3 "Baloo 2", cursive',
-      TextXL: '700 3rem/1.3 "Baloo 2", cursive',
+      TitleXS: '800 1.125rem/1.3 "Baloo 2", cursive',
+      TitleS: '800 1.25rem/1.3 "Baloo 2", cursive',
+      TitleM: '700 1.5rem/1.3 "Baloo 2", cursive',
+      TitleL: '700 2rem/1.3 "Baloo 2", cursive',
+      TitleXL: '700 3rem/1.3 "Baloo 2", cursive',
     },
   },
 }

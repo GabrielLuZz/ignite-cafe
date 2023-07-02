@@ -1,6 +1,7 @@
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { HeaderContainer } from './style'
-import Logo from '../../assets/logo.svg'
+import Logo from '../../../public/assets/logo.svg'
+import { CartButton } from '../../styles/global'
 
 export function Header() {
   return (
@@ -13,10 +14,15 @@ export function Header() {
             Porto Alegre, RS
             <span></span>
           </div>
-          <button className="cartButton">
+
+          <CartButton
+            cartBackground="yellowLight"
+            cartColor="yellowDark"
+            className="cartButton"
+          >
             <ShoppingCart size={22} weight="fill" />
             <span>3</span>
-          </button>
+          </CartButton>
         </div>
       </div>
     </HeaderContainer>

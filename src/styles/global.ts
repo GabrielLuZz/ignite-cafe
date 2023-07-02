@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -21,4 +21,30 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button {
     font: ${(props) => props.theme.fonts.font1.TextS};
   }
+`
+
+const CART_COLORS = {
+  yellowLight: 'yellow-light',
+  yellowDark: 'yellow-dark',
+  purpleDark: 'purple-dark',
+  baseCard: 'base-card',
+} as const
+
+interface CartProps {
+  cartBackground: keyof typeof CART_COLORS
+  cartColor: keyof typeof CART_COLORS
+}
+
+export const CartButton = styled.button<CartProps>`
+  border: 0;
+  position: relative;
+  display: flex;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 6px;
+  background: ${(props) =>
+    props.theme.colors[CART_COLORS[props.cartBackground]]};
+  color: ${(props) => props.theme.colors[CART_COLORS[props.cartColor]]};
 `

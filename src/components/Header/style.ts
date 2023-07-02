@@ -25,6 +25,7 @@ export const HeaderContainer = styled.header`
     border-radius: 6px;
     background: ${(props) => props.theme.colors['purple-light']};
     color: ${(props) => props.theme.colors['purple-dark']};
+    font: ${(props) => props.theme.fonts.font1.TextS};
 
     svg {
       color: ${(props) => props.theme.colors.purple};
@@ -32,22 +33,12 @@ export const HeaderContainer = styled.header`
   }
 
   .cartButton {
-    border: 0;
-    position: relative;
-    display: flex;
-    padding: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    border-radius: 6px;
-    background: ${(props) => props.theme.colors['yellow-light']};
-    color: ${(props) => props.theme.colors['yellow-dark']};
-
     span {
       position: absolute;
       right: -0.52156rem;
       top: -0.5rem;
       font: ${(props) => props.theme.fonts.font1.TextXS};
+      letter-spacing: -0.045rem;
       color: ${(props) => props.theme.colors.white};
       width: 1.25rem;
       height: 1.25rem;
