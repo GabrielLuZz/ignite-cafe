@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const ChangeQuantityContainer = styled.div`
   display: flex;
   width: 4rem;
-  height: 2.375rem;
   padding: 0 0.5rem;
   justify-content: center;
   gap: 0.25rem;
@@ -18,6 +17,10 @@ export const ChangeQuantityContainer = styled.div`
     justify-content: center;
     align-items: center;
     color: ${(props) => props.theme.colors.purple};
+
+    &:focus {
+      box-shadow: 0 0 0 transparent;
+    }
   }
 
   span {

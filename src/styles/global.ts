@@ -21,6 +21,10 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button {
     font: ${(props) => props.theme.fonts.font1.TextS};
   }
+
+  button {
+    cursor: pointer;
+  }
 `
 
 const CART_COLORS = {

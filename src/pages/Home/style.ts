@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Introduction = styled.section`
-  background: url('/src/assets/introductionBackground.png');
+  background: url('/public/assets/introductionBackground.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
