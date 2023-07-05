@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+    transition: all ease 0.2s;
   }
 `
 
@@ -32,11 +33,13 @@ const CART_COLORS = {
   yellowDark: 'yellow-dark',
   purpleDark: 'purple-dark',
   baseCard: 'base-card',
+  purple: 'purple',
 } as const
 
 interface CartProps {
   cartBackground: keyof typeof CART_COLORS
   cartColor: keyof typeof CART_COLORS
+  focusColor: keyof typeof CART_COLORS
 }
 
 export const CartButton = styled.button<CartProps>`
@@ -51,4 +54,9 @@ export const CartButton = styled.button<CartProps>`
   background: ${(props) =>
     props.theme.colors[CART_COLORS[props.cartBackground]]};
   color: ${(props) => props.theme.colors[CART_COLORS[props.cartColor]]};
+
+  &:focus {
+    box-shadow: 0 0 0 2px
+      ${(props) => props.theme.colors[CART_COLORS[props.focusColor]]};
+  }
 `

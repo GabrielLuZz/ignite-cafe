@@ -17,6 +17,8 @@ export const ShowcaseItemContainer = styled.li`
 
   .tagsList {
     margin-bottom: 1rem;
+    display: flex;
+    gap: 0.25rem;
     span {
       border-radius: 6.25rem;
       background: ${(props) => props.theme.colors['yellow-light']};
@@ -59,6 +61,12 @@ export const ShowcaseItemContainer = styled.li`
     .actionsRightSide {
       display: flex;
       gap: 0.5rem;
+    }
+  }
+
+  .cartButton {
+    &:hover {
+      background: ${(props) => props.theme.colors.purple};
     }
   }
 `

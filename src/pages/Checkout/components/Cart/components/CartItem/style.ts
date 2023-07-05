@@ -40,6 +40,15 @@ export const CartItemContainer = styled.div`
           border-radius: 0.375rem;
           background: ${(props) => props.theme.colors['base-button']};
           color: ${(props) => props.theme.colors.purple};
+          box-shadow: 0 0 0 transparent;
+
+          &:hover {
+            background: ${(props) => props.theme.colors['base-hover']};
+
+            span {
+              color: ${(props) => props.theme.colors['base-subtitle']};
+            }
+          }
 
           span {
             font: ${(props) => props.theme.fonts.font1.ButtonM};

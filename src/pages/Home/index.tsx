@@ -2,6 +2,7 @@ import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { Introduction, Showcase } from './style'
 import introductionImage from '../../../public/assets/introductionImage.png'
 import { ShowcaseItem } from './components/ShowcaseItem'
+import { products } from '../../mocks/products'
 
 export function Home() {
   return (
@@ -50,11 +51,9 @@ export function Home() {
         <div className="wrapper">
           <h2>Nossos cafés</h2>
           <ul className="showcaseList">
-            <ShowcaseItem />
-            <ShowcaseItem />
-            <ShowcaseItem />
-            <ShowcaseItem />
-            <ShowcaseItem />
+            {products.map((product) => (
+              <ShowcaseItem key={product.id} product={product} />
+            ))}
           </ul>
         </div>
       </Showcase>

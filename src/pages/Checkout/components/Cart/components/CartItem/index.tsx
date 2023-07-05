@@ -11,7 +11,7 @@ export function CartItem() {
           <h3>Expresso Tradicional</h3>
           <div className="actions">
             <ChangeQuantityButton />
-            <button className="removeButton">
+            <button type="button" className="removeButton">
               <Trash size={16} />
               <span>Remover</span>
             </button>

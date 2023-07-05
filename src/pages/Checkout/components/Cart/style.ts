@@ -59,6 +59,10 @@ export const CartContainer = styled.div`
       font: ${(props) => props.theme.fonts.font1.ButtonG};
       color: ${(props) => props.theme.colors.white};
       text-transform: uppercase;
+
+      &:hover {
+        background: ${(props) => props.theme.colors['yellow-dark']};
+      }
     }
   }
 `

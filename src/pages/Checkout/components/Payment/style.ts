@@ -11,12 +11,22 @@ export const PaymentMethod = styled.label`
   display: flex;
   padding: 1rem;
   align-items: center;
+  cursor: pointer;
   gap: 0.75rem;
   flex: 1 0 0;
   border-radius: 0.375rem;
   background: ${(props) => props.theme.colors['base-button']};
   color: ${(props) => props.theme.colors.purple};
   border: 1px solid ${(props) => props.theme.colors['base-card']};
+  transition: background ease 0.2s;
+
+  &:hover {
+    background: ${(props) => props.theme.colors['base-hover']};
+
+    span {
+      color: ${(props) => props.theme.colors['base-subtitle']};
+    }
+  }
 
   span {
     font: ${(props) => props.theme.fonts.font1.ButtonM};

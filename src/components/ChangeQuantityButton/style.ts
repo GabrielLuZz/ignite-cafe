@@ -18,6 +18,10 @@ export const ChangeQuantityContainer = styled.div`
     align-items: center;
     color: ${(props) => props.theme.colors.purple};
 
+    &:hover {
+      color: ${(props) => props.theme.colors['purple-dark']};
+    }
+
     &:focus {
       box-shadow: 0 0 0 transparent;
     }

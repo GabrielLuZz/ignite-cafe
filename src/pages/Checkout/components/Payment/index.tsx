@@ -11,12 +11,12 @@ export function Payment() {
       </PaymentMethod>
       <PaymentMethod>
         <Bank size={16} />
-        <input type="radio" name="paymentMethod" value="credit-card" />
+        <input type="radio" name="paymentMethod" value="debit-card" />
         <span>cartão de débito</span>
       </PaymentMethod>
       <PaymentMethod>
         <Money size={16} />
-        <input type="radio" name="paymentMethod" value="credit-card" />
+        <input type="radio" name="paymentMethod" value="in-cash" />
         <span>dinheiro</span>
       </PaymentMethod>
     </PaymentContainer>

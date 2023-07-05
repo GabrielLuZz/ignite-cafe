@@ -2,23 +2,37 @@ import { ShoppingCart } from 'phosphor-react'
 import { CartButton } from '../../../../styles/global'
 import { ShowcaseItemContainer } from './style'
 import { ChangeQuantityButton } from '../../../../components/ChangeQuantityButton'
+import { IProduct } from '../../../../mocks/products'
+import { formatPrice } from '../../../../utils/formatPrice'
 
-export function ShowcaseItem() {
+interface IShowcaseItem {
+  product: IProduct
+}
+
+export function ShowcaseItem({ product }: IShowcaseItem) {
+  console.log(formatPrice(product.price).split(' '))
   return (
     <ShowcaseItemContainer>
-      <img src="/public/assets/arabe.png" alt="" />
+      <img src={`/public/assets/${product.image}`} alt={product.name} />
       <div className="tagsList">
-        <span>Tradicional</span>
+        {product.flags.map((flag) => (
+          <span key={product.name + flag + new Date().getTime()}>{flag}</span>
+        ))}
       </div>
-      <h3>Expresso Tradicional</h3>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
       <div className="actionsArea">
         <span className="price">
-          <span>R$</span> 9,90
+          <span>R$</span> {formatPrice(product.price)}
         </span>
         <div className="actionsRightSide">
           <ChangeQuantityButton />
-          <CartButton cartBackground="purpleDark" cartColor="baseCard">
+          <CartButton
+            cartBackground="purpleDark"
+            cartColor="baseCard"
+            focusColor="purple"
+            className="cartButton"
+          >
             <ShoppingCart size={22} weight="fill" />
           </CartButton>
         </div>

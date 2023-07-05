@@ -2,6 +2,13 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   padding: 0 1.25rem;
+
+  .logo {
+    &:focus {
+      box-shadow: 0 0 0 transparent;
+    }
+  }
+
   .wrapper {
     padding: 2rem 0;
     display: flex;

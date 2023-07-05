@@ -4,11 +4,11 @@ import { ChangeQuantityContainer } from './style'
 export function ChangeQuantityButton() {
   return (
     <ChangeQuantityContainer>
-      <button>
+      <button type="button">
         <Minus size={14} weight="bold" />
       </button>
       <span>2</span>
-      <button>
+      <button type="button">
         <Plus size={14} weight="bold" />
       </button>
     </ChangeQuantityContainer>
