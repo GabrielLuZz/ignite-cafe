@@ -1,5 +1,13 @@
 export function formatPrice(price: number) {
-  return price
-    .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-    .split('$')[1]
+  const priceWithSign = price.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
+  const priceWithoutSign = priceWithSign.split('$')[1]
+
+  return {
+    priceWithSign,
+    priceWithoutSign,
+  }
 }

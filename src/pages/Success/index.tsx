@@ -1,7 +1,20 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { OrderInfo, SuccessContainer } from './style'
+import { Navigate, useParams } from 'react-router-dom'
+import { useContext } from 'react'
+import { OrderContext } from '../../contexts/Order/OrderContext'
 
 export function Success() {
+  const { orderId } = useParams()
+
+  const { orders } = useContext(OrderContext)
+
+  const order = orders.find((order) => order.id === orderId)
+
+  if (!order) {
+    return <Navigate to={'/checkout'} />
+  }
+
   return (
     <SuccessContainer>
       <div className="info">
@@ -14,8 +27,12 @@ export function Success() {
             </span>
             <p className="text">
               Entrega em
-              <span className="bold"> Rua João Daniel Martinelli, 102 </span>
-              Farrapos - Porto Alegre, RS
+              <span className="bold">
+                {' '}
+                Rua {order?.address.street}, {order?.address.number}{' '}
+              </span>
+              {order?.address.neighborhood} - {order?.address.city},{' '}
+              {order?.address.state}
             </p>
           </OrderInfo>
 
@@ -35,7 +52,7 @@ export function Success() {
             </span>
             <p className="text">
               Pagamento na entrega
-              <span className="bold block">Cartão de Crédito</span>
+              <span className="bold block">{order?.paymentMethod}</span>
             </p>
           </OrderInfo>
         </div>

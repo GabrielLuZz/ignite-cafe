@@ -11,17 +11,19 @@ interface IAddress {
   state: string
 }
 
-interface IOrder {
+export interface IOrder {
+  id: string
   address: IAddress
   paymentMethod: string
-  cart: ICartState
+  cartState: ICartState
 }
 
 interface IOrderContext {
   orders: IOrder[]
+  setInOrders: (order: IOrder) => void
 }
 
-const OrderContext = createContext({} as IOrderContext)
+export const OrderContext = createContext({} as IOrderContext)
 
 interface IOrderContextProvider {
   children: ReactNode
@@ -30,7 +32,13 @@ interface IOrderContextProvider {
 export function OrderContextProvider({ children }: IOrderContextProvider) {
   const [orders, setOrders] = useState<IOrder[]>([])
 
+  function setInOrders(order: IOrder) {
+    setOrders((state) => [...state, order])
+  }
+
   return (
-    <OrderContext.Provider value={{ orders }}>{children}</OrderContext.Provider>
+    <OrderContext.Provider value={{ orders, setInOrders }}>
+      {children}
+    </OrderContext.Provider>
   )
 }

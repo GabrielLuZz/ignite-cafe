@@ -1,0 +1,18 @@
+Este foi um projeto em que revi diversos assuntos que considero avançados e também pude me detalhar um pouco em alguns conceitos e tecnologias do react. 
+
+As tecnologias utilizadas nesse projeto foram:
+
+Styled components
+React Router dom
+React Hook form
+validação com zod
+context API
+reducers
+immer
+
+Conceitos novos que aprendi nessas tecnologias:
+
+theme provider no styled componentents
+controlled e uncontrolled forms
+a melhor integração com o typescript que a biblioteca zod traz em detrimento das outras
+a possiblidade de usar uma sintaxe de javascript por causa da biblioteca immer, que nos ajuda a manter a imutabilidade.

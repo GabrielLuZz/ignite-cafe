@@ -3,8 +3,14 @@ import { HeaderContainer } from './style'
 import Logo from '../../../public/assets/logo.svg'
 import { CartButton } from '../../styles/global'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/Cart'
 
 export function Header() {
+  const { cart } = useContext(CartContext)
+
+  const productQuantityInCart = cart.length
+
   return (
     <HeaderContainer>
       <div className="wrapper">
@@ -26,7 +32,9 @@ export function Header() {
               focusColor="yellowDark"
             >
               <ShoppingCart size={22} weight="fill" />
-              <span>3</span>
+              {productQuantityInCart > 0 && (
+                <span>{productQuantityInCart}</span>
+              )}
             </CartButton>
           </NavLink>
         </div>
