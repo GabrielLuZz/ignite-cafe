@@ -1,3 +1,5 @@
+instruções da atividade: https://efficient-sloth-d85.notion.site/Desafio-02-Coffee-Delivery-30e42a21fdb44b09a85244fc2c3dbdf9
+
 Este foi um projeto em que revi diversos assuntos que considero avançados e também pude me detalhar um pouco em alguns conceitos e tecnologias do react. 
 
 As tecnologias utilizadas nesse projeto foram:
